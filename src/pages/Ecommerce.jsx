@@ -11,13 +11,19 @@ import {
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, currentMode } = useStateContext();
 
   return (
     <div style={{ marginTop: "56px" }}>
       {/* First Div */}
       <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+        <div
+          className={`"bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full p-8 pt-9 m-3 ${
+            currentMode === "Dark"
+              ? "bg-dark"
+              : "bg-hero-pattern bg-no-repeat bg-cover bg-center"
+          }"`}
+        >
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
@@ -74,7 +80,7 @@ const Ecommerce = () => {
                 <span>
                   <GoDot />
                 </span>
-                <span>Expense</span>
+                <span style={{ color: "#7c7878" }}>Expense</span>
               </p>
 
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
