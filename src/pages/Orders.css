@@ -1,0 +1,18 @@
+.e-grid .e-headercell {
+  background-color: #333;
+  color: #fff;
+}
+
+.e-gridcontent .e-rowcell {
+  background-color: #333;
+  color: #fff;
+}
+
+.e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd),
+.e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd),
+.e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd),
+.e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd),
+.e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd),
+.e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
+  color: white !important;
+}
