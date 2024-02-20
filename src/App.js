@@ -28,6 +28,52 @@ import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 
 const App = () => {
+  const css = `
+      .e-grid .e-headercell {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .e-gridcontent .e-rowcell {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd),
+      .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd),
+      .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd),
+      .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd),
+      .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd),
+      .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
+        color: white !important;
+      }
+
+      .e-grid td.e-active {
+        background-color: #888484;
+      }
+
+      .e-grid .e-row:hover .e-rowcell{
+          background-color: #6f6f6f !important;
+      }
+
+      .e-pagercontainer  {
+        margin-top: 10px !important;
+      }
+
+      .e-pagercontainer .e-icons  {
+        padding-bottom: 15px !important;
+      }
+
+      .e-gridpager {
+        background-color: #333333 !important;
+      }
+
+      .e-parentmsgbar {
+        color: white !important;
+        margin-top: 8px !important;
+      }
+  `;
+
   const {
     activeMenu,
     themeSettings,
@@ -38,6 +84,7 @@ const App = () => {
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
+      {currentMode === "Dark" && <style>{css}</style>}
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           {/* Tooltip */}

@@ -23,41 +23,11 @@ import { useStateContext } from "../contexts/ContextProvider";
 const Orders = () => {
   const { currentMode } = useStateContext();
 
-  const css = `
-    .e-grid .e-headercell {
-      background-color: #333;
-      color: #fff;
-    }
-
-    .e-gridcontent .e-rowcell {
-      background-color: #333;
-      color: #fff;
-    }
-
-    .e-grid .e-rowcell:not(.e-editedbatchcell):not(.e-updatedtd),
-    .e-grid .e-detailrowcollapse:not(.e-editedbatchcell):not(.e-updatedtd),
-    .e-grid .e-detailrowexpand:not(.e-editedbatchcell):not(.e-updatedtd),
-    .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd),
-    .e-grid .e-gridheader .e-rowdragdrop:not(.e-editedbatchcell):not(.e-updatedtd),
-    .e-grid .e-emptyrow:not(.e-editedbatchcell):not(.e-updatedtd) {
-      color: white !important;
-    }
-
-    .e-grid td.e-active {
-      background-color: #888484;
-    }
-
-    .e-grid .e-row:hover .e-rowcell{
-        background-color: #6f6f6f !important;
-    }
-`;
-
   return (
     <div
-      className="m-2 md:m-10 p-2 md:p-1 rounded-3xl"
+      className="m-2 md:m-10 p-5 rounded-3xl"
       style={{ backgroundColor: currentMode === "Light" ? "white" : "#33373e" }}
     >
-      {currentMode === "Dark" && <style>{css}</style>}
       <Header category="Page" title="Orders" />
 
       <GridComponent
